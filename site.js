@@ -64,11 +64,11 @@ const langSelector = {
     options: document.querySelectorAll(".lang-selector__option"),
     triangle: document.getElementById("lang-triangle"),
     selectedText: document.getElementById("lang-selected"),
-    selected: "ru",
+    selected: localStorage.getItem("lang") ?? "ru",
     open: false
 };
 
-const setLang = (selector) => {
+const setupLang = (selector) => {
     selector.selectedText.innerText = 
         selector.selected.toUpperCase();
 
@@ -86,15 +86,16 @@ const setLang = (selector) => {
     };
 
     selector.options.forEach(opt => opt.onclick = () => {
-        selector.selected = opt.innerText.trim().toLowerCase();
-        selector.selectedText.innerText = 
-            selector.selected.toUpperCase();
+        const lang = opt.innerText.trim().toLowerCase();
+        localStorage.setItem("lang", lang);
+        selector.selected = lang;
+        selector.selectedText.innerText = lang.toUpperCase();
         selector.selector.click();
-        loadSite(selector);
+        loadPageData(selector);
     });
 };
 
-const loadSite = (langSelector) => {
+const loadPageData = (langSelector) => {
     let lang = langSelector.selected;
 
     document.getElementById("page-title").innerText = textMain.title[lang];
@@ -112,7 +113,7 @@ const loadSite = (langSelector) => {
     }
 };
 
-setLang(langSelector);
+setupLang(langSelector);
 setupMenu(langSelector);
-loadSite(langSelector);
+loadPageData(langSelector);
 
