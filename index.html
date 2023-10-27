@@ -4,128 +4,90 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>jackeet</title>
-    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="site.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="index.html" id="home">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="projects.html" id="projects">Проекты</a>
-                    </li>
+    <header class="header">
+        <h1 id="page-title"></h1>
+
+        <button id="menu-button" class="menu-button__wrapper">
+            <span class="menu-button">
+                <span class="menu-button__line"></span>
+                <span class="menu-button__line"></span>
+            </span>
+        </button>
+    </header>
+
+    <div id="menu-cover" class="menu__cover"></div>
+    <nav id="menu" class="menu">
+        <div>
+            <div class="lang-selector">
+                <button class="lang-selector__selected" id="lang-selector">
+                    <span id="lang-selected" id="lang-selected"></span>
+                    <div class="triangle" id="lang-triangle"></div>
+                </button>
+                <ul class="lang-selector__options" id="lang-options">
+                    <li class="lang-selector__option">RU</li>
+                    <li class="lang-selector__option">EN</li>
                 </ul>
-                <a class="nav-link text-light" href="#" id="lang">EN</a>
+            </div>
+
+            <div class="menu__links">
+                <a href="" class="menu__link selected">
+                    Home
+                </a>
+                <a href="projects.html" class="menu__link">
+                    Programming
+                </a>
+                <a href="birds.html" class="menu__link">
+                    Birds
+                </a>
+                <a href="" class="menu__link">
+                    Contacts 
+                </a>
             </div>
         </div>
-    </nav>
-</header>
 
-<div class="container-fluid">
-    <div class="container">
-        <div class="text">
-            <h4>
-                Здравствуйте.
-            </h4>
-            <p>
-                Меня зовут Полина Грабар.
-                <br/>
-                Я живу в Ижевске, учусь на программиста (4 курс из 4) и работаю программистом.
-            </p>
-            <p>
-                Больше всего меня интересуют языки программирования и связанные с ними вещи:
-                трансляторы, компиляторы, предметно-ориентированные языки, языки разметки и т. д.
-            </p>
-
-            <hr class="section_break"/>
-            <h5>
-                Программирование
-            </h5>
-
-            <p>
-                В основном работаю с <strong>PHP</strong> + <strong>Laravel</strong> и <strong>PostgreSQL</strong>.
-            </p>
-
-            <p>
-                Также в последнее время пишу много кода на <strong>Python</strong>. Использую его в проекте для ВКР,
-                лабораторных по разным предметам, небольших алгоритмических задачах и просто случайных скриптах
-                с уклоном в вычисления или структуры данных.
-                </br>
-                Вместе с Python использую <strong>pytest</strong>, <strong>numpy</strong> и <strong>matplotlib</strong>.
-            </p>
-
-            <p>
-                Мой "родной" язык - <strong>C#</strong>. В этом году почти не приходилось им пользоваться,
-                но раньше я активно писала на нем учебные проекты, лабораторные и курсовые.
-                Также у меня есть несколько вещей, написанных на C# чисто для души, в том числе
-                <a href="https://github.com/Jackeeet/warbler">небольшой интерпретируемый язык программирования</a>.
-                Помимо C#, разбираюсь и в других технологиях платформы .NET: <strong>ASP.NET Core, EF, фреймворках
-                для юнит-тестирования</strong>. Скорее всего, когда-нибудь доберусь и до F#.
-            </p>
-
-            <p>
-                Также комфортно себя чувствую с <strong>JavaScript</strong>. Лучше всего разбираюсь
-                именно в чистом JS, но также знаю основы <strong>React</strong>.
-                </br>
-                Мне не особо интересен фронтенд, но создание стандартного веб-интерфейса не вызывает у меня проблем.
-            </p>
-
-            <p>
-                В стремительно сокращающееся свободное время я развлекаюсь написанием программ на <strong>Haskell</strong>.
-                Также мне приходилось писать немного кода на <strong>ассемблере, С++</strong> и <strong>Java</strong>.
-                Ну и формально я являюсь человеком с самым большим опытом программирования на
-                <a href="https://github.com/Jackeeet/warbler">warbler</a> в мире :)
-                </br>
-                Так что при необходимости я разберусь с любым из распространенных (и не очень) языков/фреймворков.
-            </p>
-
-            <p>
-                Почитать описания моих проектов (которые, правда, давно не обновлялись) <a href="projects.html">можно здесь</a>.
-                Репозитории большинства из них можно найти на гитхабе: <a href="https://github.com/Jackeeet">Jackeeet</a>
-            </p>
-
-            <hr class="section_break"/>
-            <h5>
-                Контакты
-            </h5>
-            <p>
-                Если вы хотите связаться со мной, можно сделать это через:
-            </p>
-            <ul class="info_list">
-                <li>
-                    <strong>Email: </strong><a href="mailto: polina.grabar@gmail.com">polina.grabar@gmail.com</a>
-                </li>
-                <li>
-                    <strong>Telegram: </strong><a href="https://t.me/Jackeet">t.me/Jackeet</a>
-                </li>
-                <li>
-                    <strong>VK: </strong><a href="https://vk.com/jackeet">vk.com/jackeet</a>
-                </li>
-            </ul>
-            <p>
-                Я стараюсь отвечать на сообщения через почту или телеграм максимально быстро.
-                В VK на ответ может уйти больше времени - в последнее время я туда нечасто захожу.
-            </p>
-            <p class="footer">
-                последнее обновление: ноябрь 2022
-            </p>
+        <div class="last-updated">
+            last updated on 01.01.2000
         </div>
-    </div>
-</div>
+    </nav>
 
-<script src="js/links.js"></script>
-<script src="lib/js/bootstrap.bundle.min.js"></script>
+    <main id="main">
+        <header>
+            <p id="page-header"></p>
+        </header>
+
+        <section class="info">
+            <section class="block-left" id="info-sections"></section>
+
+            <aside class="contacts">
+                <div class="qr__wrapper">
+                    <img src="img/qr-github.png" alt="Telegram qr code" class="qr"></img>
+                    <span class="qr__label">
+                        Telegram
+                    </span>
+                </div>
+                <div class="qr__wrapper">
+                    <img src="img/qr-github.png" alt="GitHub qr code" class="qr"></img>
+                    <span class="qr__label">
+                        GitHub
+                    </span>
+                </div>
+                <div class="qr__wrapper">
+                    <img src="img/qr-github.png" alt="eBird qr code" class="qr"></img>
+                    <span class="qr__label">
+                        eBird
+                    </span>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="site.js"></script>
 </body>
 </html>
