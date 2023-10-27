@@ -1,3 +1,9 @@
+const clearElement = (el) => {
+    while (el.firstChild) {
+        el.removeChild(el.lastChild);
+    }
+};
+
 const createSection = (sectionData, imageFirst) => { 
     const section = document.createElement("section");
     section.classList.add("info-section");
@@ -38,7 +44,6 @@ const setupMenu = (langSelector) => {
 
     menuButton.onclick = () => {
         menuOpen = !menuOpen;
-        
         if (menuOpen) {
             menu.style.visibility = "visible";
             menuCover.style.visibility = "visible";
@@ -68,7 +73,7 @@ const langSelector = {
     open: false
 };
 
-const setupLang = (selector) => {
+const setupLang = (page, selector) => {
     selector.selectedText.innerText = 
         selector.selected.toUpperCase();
 
@@ -91,11 +96,11 @@ const setupLang = (selector) => {
         selector.selected = lang;
         selector.selectedText.innerText = lang.toUpperCase();
         selector.selector.click();
-        loadPageData(selector);
+        loadPageData(page, selector);
     });
 };
 
-const loadPageData = (langSelector) => {
+const loadPageData = (page, langSelector) => {
     let lang = langSelector.selected;
 
     document.getElementById("page-title").innerText = textMain.title[lang];
@@ -103,17 +108,30 @@ const loadPageData = (langSelector) => {
 
     const sections = textMain.sections[lang];
     const sectionsContainer = document.getElementById("info-sections");
-    while (sectionsContainer.firstChild) {
-        sectionsContainer.removeChild(sectionsContainer.lastChild);
-    }
-
+    clearElement(sectionsContainer);
     for (let i = 0; i < sections.length; i++) {
         const section = createSection(sections[i]);
         sectionsContainer.appendChild(section);
     }
+
+    const linkContainer = document.getElementById("menu-links");
+    clearElement(linkContainer);
+    links.forEach(link => {
+        a = document.createElement("a");
+        a.href = link.url;
+        a.classList.add("menu__link");
+        if (link.page === page) {
+            a.classList.add("selected");
+        } 
+        a.innerText = link.title[langSelector.selected];
+        linkContainer.appendChild(a);
+    });
+
 };
 
-setupLang(langSelector);
+let page = "main";
+
+setupLang(page, langSelector);
 setupMenu(langSelector);
-loadPageData(langSelector);
+loadPageData(page, langSelector);
 

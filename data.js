@@ -1,3 +1,46 @@
+const links = [
+    {
+        "page": "main",
+        "url": "",
+        "title": {
+            "en": "Home",
+            "ru": "Главная",
+        }
+    },
+    { 
+        "page": "projects",
+        "url": "projects.html",
+        "title": {
+            "en": "Programming",
+            "ru": "Программирование",
+        }
+    },
+    { 
+        "page": "birds",
+        "url": "",
+        "title": {
+            "en": "Birds",
+            "ru": "Птицы",
+        }
+    },
+    { 
+        "page": "contacts",
+        "url": "",
+        "title": {
+            "en": "Contacts",
+            "ru": "Контакты",
+        }
+    },
+    { 
+        "page": "about",
+        "url": "",
+        "title": {
+            "en": "About this site",
+            "ru": "О сайте",
+        }
+    },
+];
+
 const textMain = {
     "title": {
         "en": "Hello.",
