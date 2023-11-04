@@ -99,6 +99,10 @@ p {
     position: relative;
     display: inline-block;
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .lang-selector__selected {
@@ -196,6 +200,11 @@ p {
     align-items: flex-start;
 
     padding: 0 1rem;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .menu__links {
@@ -273,6 +282,11 @@ p {
 .contacts {
     background: var(--emph-medium);
     padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .qr__wrapper {
