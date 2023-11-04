@@ -6,6 +6,26 @@
     --emph-dark: #166496;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+    border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 100vh;
+    background: var(--emph-light);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--emph-light) var(--bg);
+}
+
 body {
     margin: 0 4rem;
     font-family: 'Overpass', sans-serif;
@@ -24,7 +44,7 @@ p {
 }
 
 .header {
-    margin: 1.5rem 0;
+    margin: 1.5rem -2rem 1.5rem 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -41,6 +61,16 @@ p {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.info-section {
+    margin-bottom: 1.5rem;
+}
+
+.info-section__image {
+    background: var(--emph-medium);
+    width: 300px; 
+    padding: 1.25rem;
 }
 
 .block-left {
@@ -65,23 +95,27 @@ p {
 }
 
 .lang-selector {
-    margin: 2rem 0 1rem 0;
+    margin: 1.5rem 0 1rem 0;
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
 .lang-selector__selected {
     background: var(--main);
     color: var(--emph-dark);
-    padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    height: 2rem;
     border: none;
     border-radius: 5px;
 
     font-size: 1.25rem;
     font-weight: bold;
 
+    cursor: pointer;;
+
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -139,7 +173,8 @@ p {
     width: 100%;
     height: 100%;
 
-    background: var(--emph-medium);
+    /* background: var(--emph-medium); */
+    background: #16649699
 }
 
 .menu {
@@ -190,7 +225,7 @@ p {
     background-color: transparent;
     outline: 0;
     resize: none;
-    margin: 0;
+    margin: -0.5rem 0 0 0;
     padding: 0;
     border: none;
     color: inherit;

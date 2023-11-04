@@ -21,16 +21,18 @@ const createSection = (sectionData, imageFirst) => {
     text.appendChild(p);
 
     const image = document.createElement("img");
+    image.classList.add("info-section__image");
     image.src = sectionData.image;
     image.alt = sectionData.alt;
 
     if (imageFirst) {
-        section.appendChild(text);
+        image.classList.add("block-left");
         section.appendChild(image);
+        section.appendChild(text);
     } else {
         text.classList.add("block-left");
-        section.appendChild(image);
         section.appendChild(text);
+        section.appendChild(image);
     }
 
     return section;
@@ -110,7 +112,8 @@ const loadPageData = (page, langSelector) => {
     const sectionsContainer = document.getElementById("info-sections");
     clearElement(sectionsContainer);
     for (let i = 0; i < sections.length; i++) {
-        const section = createSection(sections[i]);
+        const imageFirst = i % 2 !== 0;
+        const section = createSection(sections[i], imageFirst);
         sectionsContainer.appendChild(section);
     }
 
