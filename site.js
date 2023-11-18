@@ -20,18 +20,23 @@ const createSection = (sectionData, imageFirst) => {
     p.innerText = sectionData.text;
     text.appendChild(p);
 
-    const image = document.createElement("img");
-    image.classList.add("info-section__image");
-    image.src = sectionData.image;
-    image.alt = sectionData.alt;
+    let image;
+    if (sectionData.image) {
+        image = document.createElement("img");
+        image.classList.add("info-section__image");
+        image.src = sectionData.image;
+        image.alt = sectionData.alt;
+    
+        if (imageFirst) {
+            image.classList.add("block-left");
+            section.appendChild(image);
+        }
+    }
 
-    if (imageFirst) {
-        image.classList.add("block-left");
-        section.appendChild(image);
-        section.appendChild(text);
-    } else {
+    section.appendChild(text);
+
+    if (sectionData.image && !imageFirst) {
         text.classList.add("block-left");
-        section.appendChild(text);
         section.appendChild(image);
     }
 
@@ -103,12 +108,36 @@ const setupLang = (page, selector) => {
 };
 
 const loadPageData = (page, langSelector) => {
+    const data = links[page].data;
     let lang = langSelector.selected;
 
-    document.getElementById("page-title").innerText = textMain.title[lang];
-    document.getElementById("page-header").innerText = textMain.header[lang];
+    const linkContainer = document.getElementById("menu-links");
+    clearElement(linkContainer);
 
-    const sections = textMain.sections[lang];
+    for (let pageKey of Object.keys(links)) {
+        link = links[pageKey];
+        a = document.createElement("a");
+        a.href = link.url;
+        a.classList.add("menu__link");
+        if (pageKey === page) {
+            a.classList.add("selected");
+        } 
+        a.innerText = link.title[lang];
+        linkContainer.appendChild(a);
+    }
+
+    document.getElementById("page-title").innerText = data.title[lang];
+
+    if (data.header) {
+        document.getElementById("page-header").innerText = 
+            data.header[lang];
+    }
+
+    if (!data.sections) {
+        return;
+    }
+
+    const sections = data.sections[lang];
     const sectionsContainer = document.getElementById("info-sections");
     clearElement(sectionsContainer);
     for (let i = 0; i < sections.length; i++) {
@@ -116,23 +145,7 @@ const loadPageData = (page, langSelector) => {
         const section = createSection(sections[i], imageFirst);
         sectionsContainer.appendChild(section);
     }
-
-    const linkContainer = document.getElementById("menu-links");
-    clearElement(linkContainer);
-    links.forEach(link => {
-        a = document.createElement("a");
-        a.href = link.url;
-        a.classList.add("menu__link");
-        if (link.page === page) {
-            a.classList.add("selected");
-        } 
-        a.innerText = link.title[langSelector.selected];
-        linkContainer.appendChild(a);
-    });
-
 };
-
-let page = "main";
 
 setupLang(page, langSelector);
 setupMenu(langSelector);
