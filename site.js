@@ -26,7 +26,7 @@ const createSection = (sectionData, imageFirst) => {
         image.classList.add("info-section__image");
         image.src = sectionData.image;
         image.alt = sectionData.alt;
-    
+
         if (imageFirst) {
             image.classList.add("block-left");
             section.appendChild(image);
@@ -43,11 +43,31 @@ const createSection = (sectionData, imageFirst) => {
     return section;
 };
 
-const setupMenu = (langSelector) => {
+const setupMenu = (page, langSelector) => {
     let menuOpen = false;
+    const lang = langSelector.selected;
     const menuCover = document.getElementById("menu-cover");
     const menu = document.getElementById("menu");
     const menuButton = document.getElementById("menu-button");
+
+    const linkContainer = document.getElementById("menu-links");
+    clearElement(linkContainer);
+
+    for (let pageKey of Object.keys(links)) {
+        link = links[pageKey];
+        a = document.createElement("a");
+        a.href = link.url;
+        a.classList.add("menu__link");
+        if (pageKey === page) {
+            a.classList.add("selected");
+        } 
+        a.innerText = link.title[lang];
+        linkContainer.appendChild(a);
+    }
+
+    const updatedDateContainer = document.getElementById("last-updated");
+    updatedDateContainer.innerText = 
+        lastUpdated.info[lang] + " " + lastUpdated.date 
 
     menuButton.onclick = () => {
         menuOpen = !menuOpen;
@@ -57,7 +77,7 @@ const setupMenu = (langSelector) => {
 
             menu.classList.add("menu-showing");
             menuButton.classList.add("menu-showing");
-        } else { 
+        } else {
             menu.style.visibility = "hidden";
             menuCover.style.visibility = "hidden";
 
@@ -103,6 +123,7 @@ const setupLang = (page, selector) => {
         selector.selected = lang;
         selector.selectedText.innerText = lang.toUpperCase();
         selector.selector.click();
+        setupMenu(page, selector);
         loadPageData(page, selector);
     });
 };
@@ -110,21 +131,6 @@ const setupLang = (page, selector) => {
 const loadPageData = (page, langSelector) => {
     const data = links[page].data;
     let lang = langSelector.selected;
-
-    const linkContainer = document.getElementById("menu-links");
-    clearElement(linkContainer);
-
-    for (let pageKey of Object.keys(links)) {
-        link = links[pageKey];
-        a = document.createElement("a");
-        a.href = link.url;
-        a.classList.add("menu__link");
-        if (pageKey === page) {
-            a.classList.add("selected");
-        } 
-        a.innerText = link.title[lang];
-        linkContainer.appendChild(a);
-    }
 
     document.getElementById("page-title").innerText = data.title[lang];
 
@@ -148,6 +154,6 @@ const loadPageData = (page, langSelector) => {
 };
 
 setupLang(page, langSelector);
-setupMenu(langSelector);
+setupMenu(page, langSelector);
 loadPageData(page, langSelector);
 
