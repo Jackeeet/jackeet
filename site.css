@@ -70,7 +70,8 @@ p {
 .info-section__image {
     background: var(--emph-medium);
     width: 300px; 
-    padding: 1.25rem;
+    max-width: 100%;
+    padding: 1rem;
 }
 
 .block-left {
@@ -283,7 +284,7 @@ p {
 
 .contacts {
     background: var(--emph-medium);
-    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    padding: 1rem 1rem 0 1rem;
 
     -webkit-user-select: none;
     -moz-user-select: none;

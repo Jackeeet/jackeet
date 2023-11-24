@@ -12,13 +12,13 @@ const _main = {
             {
                 "title": "Programming",
                 "text": "Programming text in english. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet scelerisque condimentum. Sed placerat nisl vitae pellentesque porttitor. Sed sed lectus sapien. Quisque euismod sit amet metus et luctus. Integer in eros tellus. Etiam lacinia id orci sit amet dictum. Aliquam dapibus odio et mi euismod, vitae dictum odio maximus.",
-                "image": "",
+                "image": "img/va.png",
                 "alt": ""
             },
             {
                 "title": "Birds",
                 "text": "Birds text in english. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet scelerisque condimentum. Sed placerat nisl vitae pellentesque porttitor. Sed sed lectus sapien. Quisque euismod sit amet metus et luctus. Integer in eros tellus. Etiam lacinia id orci sit amet dictum. Aliquam dapibus odio et mi euismod, vitae dictum odio maximus.",
-                "image": "",
+                "image": "img/sparrows.jpg",
                 "alt": ""
             }
         ],
@@ -26,14 +26,14 @@ const _main = {
             {
                 "title": "Программирование",
                 "text": "Programming text in russian. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet scelerisque condimentum. Sed placerat nisl vitae pellentesque porttitor. Sed sed lectus sapien. Quisque euismod sit amet metus et luctus. Integer in eros tellus. Etiam lacinia id orci sit amet dictum. Aliquam dapibus odio et mi euismod, vitae dictum odio maximus.",
-                "image": "",
+                "image": "img/va.png",
                 "alt": ""
             },
             {
                 "title": "Птицы",
                 "text": "Birds text in russian. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet scelerisque condimentum. Sed placerat nisl vitae pellentesque porttitor. Sed sed lectus sapien. Quisque euismod sit amet metus et luctus. Integer in eros tellus. Etiam lacinia id orci sit amet dictum. Aliquam dapibus odio et mi euismod, vitae dictum odio maximus.",
-                "image": "",
-                "alt": ""
+                "image": "img/sparrows.jpg",
+                "alt": "Два полевых воробья на водосточной трубе"
             }
         ]
     }

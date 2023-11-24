@@ -29,6 +29,7 @@ const createSection = (sectionData, imageFirst) => {
 
         if (imageFirst) {
             image.classList.add("block-left");
+            section.classList.add("info-mobile-override");
             section.appendChild(image);
         }
     }
