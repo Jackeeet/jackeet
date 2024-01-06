@@ -4,6 +4,8 @@ const clearElement = (el) => {
     }
 };
 
+const prepareText = (text) => {};
+
 const createSection = (sectionData, imageFirst) => { 
     const section = document.createElement("section");
     section.classList.add("info-section");
@@ -11,9 +13,9 @@ const createSection = (sectionData, imageFirst) => {
     const text = document.createElement("div");
 
     const header = document.createElement("header");
-    const h1 = document.createElement("h1");
-    h1.innerText = sectionData.title;
-    header.appendChild(h1);
+    const h2 = document.createElement("h2");
+    h2.innerText = sectionData.title;
+    header.appendChild(h2);
     text.appendChild(header);
 
     const p = document.createElement("p");
@@ -21,21 +23,32 @@ const createSection = (sectionData, imageFirst) => {
     text.appendChild(p);
 
     let image;
+    // let content;
     if (sectionData.image) {
-        image = document.createElement("img");
-        image.classList.add("info-section__image");
-        image.src = sectionData.image;
-        image.alt = sectionData.alt;
+        image = document.createElement("div");
+        image.classList.add("info-section__image-wrapper");
+
+        content = document.createElement("img");
+        content.classList.add("info-section__image");
+        content.src = sectionData.image;
+        content.alt = sectionData.alt;
+        image.appendChild(content);
 
         if (imageFirst) {
             image.classList.add("block-left");
+            // content.classList.add("block-left");
             section.classList.add("info-mobile-override");
             section.appendChild(image);
+            // section.appendChild(content);
         }
     }
 
     section.appendChild(text);
 
+    // if (sectionData.image && !imageFirst) {
+    //     text.classList.add("block-left");
+    //     section.appendChild(content);
+    // }
     if (sectionData.image && !imageFirst) {
         text.classList.add("block-left");
         section.appendChild(image);
@@ -78,12 +91,14 @@ const setupMenu = (page, langSelector) => {
 
             menu.classList.add("menu-showing");
             menuButton.classList.add("menu-showing");
+            langSelector.selectorContainer.classList.add("menu-showing");
         } else {
             menu.style.visibility = "hidden";
             menuCover.style.visibility = "hidden";
 
             menu.classList.remove("menu-showing");
             menuButton.classList.remove("menu-showing");
+            langSelector.selectorContainer.classList.remove("menu-showing");
             if (langSelector.open) {
                 langSelector.selector.click();
             }
@@ -93,6 +108,7 @@ const setupMenu = (page, langSelector) => {
 
 const langSelector = {
     selector: document.getElementById("lang-selector"),
+    selectorContainer: document.getElementById("lang-selector-wrapper"),
     optionsContainer: document.getElementById("lang-options"),
     options: document.querySelectorAll(".lang-selector__option"),
     triangle: document.getElementById("lang-triangle"),

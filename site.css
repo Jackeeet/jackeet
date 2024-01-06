@@ -39,6 +39,11 @@ h1 {
     margin: 0 0 2rem 0;
 }
 
+h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+}
+
 p {
     margin: 0 0 1.5rem 0;
 }
@@ -67,9 +72,15 @@ p {
     margin-bottom: 1.5rem;
 }
 
+
+.info-section__image-wrapper {
+    width: min-content;
+}
+
 .info-section__image {
     background: var(--emph-medium);
-    width: 300px; 
+    min-width: 300px; 
+    width: 30%;
     max-width: 100%;
     padding: 1rem;
 }
@@ -96,8 +107,10 @@ p {
 }
 
 .lang-selector {
-    margin: 1.5rem 0 1rem 0;
-    position: relative;
+    margin: 0.5rem 0.5rem 1rem 0;
+    position: fixed;
+    right: 6rem;
+
     display: inline-block;
     cursor: pointer;
     -webkit-user-select: none;
@@ -110,7 +123,7 @@ p {
     background: var(--main);
     color: var(--emph-dark);
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    height: 2rem;
+    height: 1.75rem;
     border: none;
     border-radius: 5px;
 
@@ -132,9 +145,9 @@ p {
     margin: 0;
     padding: 0;
 
-    width: fill-available;
     width: -moz-available;
     width: -webkit-fill-available;
+    width: fill-available;
 
     background-color: var(--emph-light);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -208,7 +221,7 @@ p {
 }
 
 .menu__links {
-    margin-top: 1rem;
+    margin-top: 4rem;
 }
 
 .menu__link {
@@ -228,8 +241,9 @@ p {
 .menu-button__wrapper {
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
     -ms-appearance: none;
+    appearance: none;
+    
     border-radius: 0;
     background-color: transparent;
     outline: 0;
@@ -283,13 +297,19 @@ p {
 }
 
 .contacts {
-    background: var(--emph-medium);
-    padding: 1rem 1rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.contacts__block {
+    background: var(--emph-medium);
+    padding: 1rem 1rem 0 1rem;
 }
 
 .qr__wrapper {
@@ -310,9 +330,9 @@ p {
 }
 
 .last-updated {
-    width: fill-available;
     width: -moz-available;
     width: -webkit-fill-available;
+    width: fill-available;
 
     text-align: center;
     margin: 0 0 1rem -1rem;

@@ -14,7 +14,18 @@
     <header class="header">
         <h1 id="page-title"></h1>
 
-        <button id="menu-button" class="menu-button__wrapper">
+        <div class="lang-selector" id="lang-selector-wrapper">
+            <button type="button" class="lang-selector__selected" id="lang-selector">
+                <span id="lang-selected" id="lang-selected"></span>
+                <div class="triangle" id="lang-triangle"></div>
+            </button>
+            <ul class="lang-selector__options" id="lang-options">
+                <li class="lang-selector__option">RU</li>
+                <li class="lang-selector__option">EN</li>
+            </ul>
+        </div>
+
+        <button type="button" id="menu-button" class="menu-button__wrapper" title="menu button">
             <span class="menu-button">
                 <span class="menu-button__line"></span>
                 <span class="menu-button__line"></span>
@@ -24,21 +35,7 @@
 
     <div id="menu-cover" class="menu__cover"></div>
     <nav id="menu" class="menu">
-        <div>
-            <div class="lang-selector">
-                <button class="lang-selector__selected" id="lang-selector">
-                    <span id="lang-selected" id="lang-selected"></span>
-                    <div class="triangle" id="lang-triangle"></div>
-                </button>
-                <ul class="lang-selector__options" id="lang-options">
-                    <li class="lang-selector__option">RU</li>
-                    <li class="lang-selector__option">EN</li>
-                </ul>
-            </div>
-
-            <div class="menu__links" id="menu-links"></div>
-        </div>
-
+        <div class="menu__links" id="menu-links"></div>
         <div class="last-updated" id="last-updated"></div>
     </nav>
 
