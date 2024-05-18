@@ -19,7 +19,7 @@ const _main = {
             {
                 "kind": "text",
                 "title": "Introverted, but willing to discuss birds",
-                "text": "I've been doing birdwatching since 2017, and so far I've seen 152 species of birds. That's 1.40% of total bird species from around the world (!!!)\n\nI can identify birds on pictures (either photos or drawings) or based on a description. As I'm not a professional ornithologist, I can't guarantee absolute accuracy, but I'm quite familiar with lots of birds. For identification help and interesting bird facts, contact me on Telegram.\n\n Sometimes I take pictures of birds through binoculars. Most of the photos end up being extremely blurry, but I think that's the appeal of taking photos this way.",
+                "text": "I've been doing birdwatching since 2017, and so far I've seen 161 species of birds. That's 1.49% of total bird species from around the world (!!!)\n\nI can identify birds on pictures (either photos or drawings) or based on a description. As I'm not a professional ornithologist, I can't guarantee absolute accuracy, but I'm quite familiar with lots of birds. For identification help and interesting bird facts, contact me on Telegram.\n\n Sometimes I take pictures of birds through binoculars. Most of the photos end up being extremely blurry, but I think that's the appeal of taking photos this way.",
                 "image": "img/sparrows.jpg",
                 "alt": "Two tree sparrows on a pipe"
             }
@@ -35,7 +35,7 @@ const _main = {
             {
                 "kind": "text",
                 "title": "Смотрю на птиц",
-                "text": "С 2017 года занимаюсь бёрдингом (любительской орнитологией). Сейчас в моем списке 152 вида птиц. Это 1,40% от общего количества видов птиц на планете (!!!)\n\n Определяю птиц по фотографии, рисунку или описанию. Не гарантирую абсолютную точность, т. к. я все-таки не профессиональный орнитолог, но многих птиц знаю довольно хорошо. За помощью в определении птиц и интересными фактами обращайтесь в Telegram.\n\n Иногда я фотографирую птиц через бинокль. Фотографии по большей части получаются крайне размытыми, но в этом вся суть.",
+                "text": "С 2017 года занимаюсь бёрдингом (любительской орнитологией). Сейчас в моем списке 161 вид птиц. Это 1,49% от общего количества видов птиц на планете (!!!)\n\n Определяю птиц по фотографии, рисунку или описанию. Не гарантирую абсолютную точность, т. к. я все-таки не профессиональный орнитолог, но многих птиц знаю довольно хорошо. За помощью в определении птиц и интересными фактами обращайтесь в Telegram.\n\n Иногда я фотографирую птиц через бинокль. Фотографии по большей части получаются крайне размытыми, но в этом вся суть.",
                 "image": "img/sparrows.jpg",
                 "alt": "Два полевых воробья на трубе"
             }
